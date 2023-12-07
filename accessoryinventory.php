@@ -35,14 +35,14 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                     <th>Accessory ID</th>
                     <th>Accessory Name</th>
                     <th>Price</th>
-                    <th>Sold?</th>
+                    <th>In stock</th>
                 </tr>
                 <?php while ($row = pg_fetch_array($search_result)): ?>
                     <tr>
                         <td><?php echo $row['accessories_id']; ?></td>
                         <td><?php echo $row['name']; ?></td>
                         <td><?php echo $row['price']; ?></td>
-                        <td><?php echo $row['is_sold']; ?></td>
+                        <td><?php echo $row['in_stock']; ?></td>
                     </tr>
                 <?php endwhile; ?>
             </table>
@@ -71,10 +71,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                             <button class="btn btn-primary" type="submit">Search Accessory</button>
                     </form>
                 </div>
-                <a href="inventory.php">
+                <a href="inventory.php" class="inventory-link">
                     <i class="fa-solid fa-arrow-left"></i>
                     <span class="nav-item">Back to Inventory</span>
-
+                </a>
             </div>
         </div>
     </div>

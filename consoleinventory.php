@@ -71,14 +71,15 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                             <button class="btn btn-primary" type="submit">Search Console</button>
                     </form>
                 </div>
-                <a href="inventory.php">
+                <a href="inventory.php" class="inventory-link">
                     <i class="fa-solid fa-arrow-left"></i>
                     <span class="nav-item">Back to Inventory</span>
-
+                </a>
+            </div>
             </div>
         </div>
     </div>
-    </div>
+
 
 
 

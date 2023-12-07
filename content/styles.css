@@ -8,16 +8,15 @@
 .pressstart{
     width: 60px;
     margin-top: 30px;
-    order: 2; /* this will place it to the right of the hamburger */
-    /* This will allow for a smooth transition effect */
+    order: 2;
+
     transition: transform 0.5s ease;
 
-    /* Starting position (when menu is closed) */
     transform: translateX(0);
 }
 
 .pressstart.opened {
-    /* Adjust the value to move it further/closer as per your design */
+
     transform: translateX(50px);
 }
 
@@ -172,7 +171,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .form-styled {
-    background-color: #3a3a3a; /* Or whatever color your sidebar is */
+    background-color: #3a3a3a;
     padding: 20px;
     border-radius: 5px;
 }
@@ -201,11 +200,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn.btn-primary:hover {
-    background-color: #d7102e; /* Darker shade for hover effect */
+    background-color: #00346b;
 }
 
 .form-control[type="text"] {
-    background-color: #F5F5F5; /* Light gray */
+    background-color: #F5F5F5;
 }
 
 .header{
@@ -242,8 +241,6 @@ h1, h2, h3, h4, h5, h6 {
 .footer-links a:hover {
     text-decoration: underline;
 }
-
-/* Adjust the class names as per your HTML structure */
 
 form {
     background: #fff;
@@ -301,7 +298,6 @@ input[type="submit"]:hover {
     background-color: #45a049;
 }
 
-/* Use Flexbox to structure the main layout */
 .wrapper {
     display: flex;
     flex-direction: column;
@@ -309,8 +305,8 @@ input[type="submit"]:hover {
 }
 
 .content {
-    flex: 1; /* Ensures that the content expands to push the footer down */
-    padding: 20px; /* Add padding for whitespace */
+    flex: 1;
+    padding: 20px;
 }
 
 /* Form and Table Styling */
@@ -319,7 +315,7 @@ input[type="submit"]:hover {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    margin-bottom: 20px; /* Add space between content and footer */
+    margin-bottom: 20px;
 }
 
 table th, table td {
@@ -337,13 +333,13 @@ table th, table td {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px; /* Adjust the height as needed */
-    margin-top: 20px; /* Adds some space at the top */
+    height: 100px;
+    margin-top: 20px;
 }
 
 .inventory-link {
     display: inline-block;
-    background-color: #3498db; /* Primary button color */
+    background-color: #007bff;
     color: #ffffff;
     padding: 10px 20px;
     margin: 10px;
@@ -352,11 +348,11 @@ table th, table td {
     border-radius: 5px;
     transition: background-color 0.3s;
     cursor: pointer;
-    font-size: 16px; /* Adjust to match your site's design */
+    font-size: 16px;
 }
 
 .inventory-link:hover {
-    background-color: #175f8d;
+    background-color: #00346b;
 }
 
 .inventory-header {
@@ -364,7 +360,7 @@ table th, table td {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 200px; /* Adjust height as needed */
+    height: 200px;
 }
 
 .inventory-header {
@@ -372,17 +368,78 @@ table th, table td {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 200px; /* Adjust height as needed */
+    height: 200px;
 }
 
 .inventory-title {
-    margin-bottom: 20px; /* Space between title and buttons */
-    font-size: 24px; /* Adjust font size as needed */
-    color: #333; /* Adjust color as needed */
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
 }
 
 .inventory-title {
-    margin-bottom: 20px; /* Space between title and buttons */
-    font-size: 24px; /* Adjust font size as needed */
-    color: #333; /* Adjust color as needed */
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+}
+
+.inventory-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.inventory-content {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+.client-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 50px;
+}
+
+.client-page-title {
+    margin-bottom: 20px;
+    font-size: 34px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.client-form {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.buy-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 50px;
+}
+
+.buy-page-title{
+    margin-bottom: 20px;
+    font-size: 34px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.buy-form {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
 }
