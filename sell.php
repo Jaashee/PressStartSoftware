@@ -13,13 +13,13 @@ if (!isset($_SESSION['employee_id'])) {
 
         </a>
         <br>
-        <a href="employeestatus.php">
+        <a href="sellconsole.php">
             <span class="nav-item">Console Sell</span>
             <i class="fa-solid fa-user-tie"></i>
 
         </a>
         <br>
-        <a href="deleteemployee.php">
+        <a href="sellaccessory.php">
             <span class="nav-item">Accessory Sell</span>
             <i class="fa-solid fa-trash"></i>
 
