@@ -75,8 +75,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                             <button class="btn btn-primary" type="submit">Search Repair</button>
                     </form>
                 </div>
-                <a href="repair.php" class="nav-item">Back to Repairs</a>
-
+                <a href="repair.php" class="inventory-link">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span class="nav-item">Back to Repairs</span>
+                </a>
             </div>
         </div>
     </div>

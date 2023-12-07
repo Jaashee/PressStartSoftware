@@ -1,107 +1,93 @@
-<?php 
+<?php
 
-include './includes/header.php'; 
-?> 
+include './includes/header.php';
+?>
 <?php
 $method = 1;
 $message = "";
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $employee_id = 0;
-	$password = "";
-  
-    
-}
-else if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	$employee_id = trim($_POST['employee_id']);
+    $password = "";
+
+
+} else if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $employee_id = trim($_POST['employee_id']);
     $password = trim($_POST['password']);
 
     $value = true;
-    if(!isset($employee_id)||trim($employee_id)==""){
-        $message ="Employee ID is required";
+    if (!isset($employee_id) || trim($employee_id) == "") {
+        $message = "Employee ID is required";
         $employee_id = "";
         $valid = false;
     }
-    if(!isset($password)||trim($password)==""){
-        $message ="Password is required";
+    if (!isset($password) || trim($password) == "") {
+        $message = "Password is required";
         $password = "";
         $valid = false;
     }
 
-    
-       
-  
-    
-    
-
 
     $sql = "SELECT * FROM employee WHERE employee_id='$employee_id'";
 
-    $result = pg_query($conn,$sql);
+    $result = pg_query($conn, $sql);
 
 
-    if(pg_num_rows($result)==1){
+    if (pg_num_rows($result) == 1) {
 
 
         $row = pg_fetch_assoc($result);
         $hashed = $row['password'];
-        
-        if(password_verify($password,$hashed)){
 
-            if($row['employee_id']===$employee_id && $row['password']===$hashed){
-            $_SESSION['employee_id'] =  $row['employee_id'];
-            $_SESSION['employee_name'] = $row['first_name'];
-            $_SESSION['typeemployee'] = $row['type'];
-            header("Location: index.php");
-           
-           
-        }
-            
+        if (password_verify($password, $hashed)) {
+
+            if ($row['employee_id'] === $employee_id && $row['password'] === $hashed) {
+                $_SESSION['employee_id'] = $row['employee_id'];
+                $_SESSION['employee_name'] = $row['first_name'];
+                $_SESSION['typeemployee'] = $row['type'];
+                header("Location: index.php");
+
+
+            }
+
 
         }
-    
-    
-      
-    }
-    else{
+
+
+    } else {
         $message = "Employee ID or Password is not correct";
     }
 
 }
 
-    
 
 ?>
-<div class="main-content">
-    <div class="container">
+    <div class="main-content">
+    <div class="sell-console-container">
+        <h1 class="sell-console-title"></h1>
+
+        <h2 id="errors"> <?php echo $message; ?></h2>
+        <?php
+
+
+        ?>
         <div>
-        <h1><b>Employee Log In</b></h1>
+            <?php
+
+            ?>
+            <form class="buy-form">
+                <form class="form-signin" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+                    <h1 class="h3 mb-3 font-weight-normal">Employee Login</h1>
+                    <label for="inputEmail" class="sr-only">Email address</label>
+                    <input type="number" id="employee_id" class="form-control" name="employee_id"
+                           value="<?php echo $employee_id; ?>" placeholder="Enter Employee ID" required autofocus>
+                    <label for="inputPassword" class="sr-only">Password</label>
+                    <input type="password" id="password" name="password" value="<?php echo $password; ?>"
+                           class="form-control" placeholder="Enter password" required>
+                    <button class="btn btn-lg btn-primary btn-block" name="login" type="submit">Sign in</button>
+                </form>
+            </form>
         </div>
-        
-        <h2 id = "errors"> <?php echo $message; ?></h2>
-<?php
-
-
-?>
-<div>
-    <?php
-
-?>
-	
-<form class="form-signin" action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
-    <h1 class="h3 mb-3 font-weight-normal">Employee Login</h1>
-    <label for="inputEmail" class="sr-only">Email address</label>
-    <input type="number" id="employee_id" class="form-control" name="employee_id" value="<?php echo $employee_id; ?>" placeholder="Enter Employee ID" required autofocus>
-    <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" id="password" name="password" value="<?php echo $password; ?>" class="form-control" placeholder="Enter password" required>
-    <button class="btn btn-lg btn-primary btn-block" name="login" type="submit">Sign in</button>
-</form>
-</div>
-        
     </div>
-
-</div>
-
-
 
 
 <?php include './includes/footer.php'; ?>

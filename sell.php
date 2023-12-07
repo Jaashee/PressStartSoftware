@@ -7,21 +7,21 @@ if (!isset($_SESSION['employee_id'])) {
 ?>
 <div class="main-content">
     <div class="container">
-        <a href="sellgame.php">
+        <a href="sellgame.php" class="inventory-link">
             <span class="nav-item">Game Sell</span>
-            <i class="fa-solid fa-house"></i>
+            <i class="fas fa-gamepad"></i>
 
         </a>
         <br>
-        <a href="sellconsole.php">
+        <a href="sellconsole.php" class="inventory-link">
             <span class="nav-item">Console Sell</span>
-            <i class="fa-solid fa-user-tie"></i>
+            <i class="fas fa-tv"></i>
 
         </a>
         <br>
-        <a href="sellaccessory.php">
+        <a href="sellaccessory.php" class="inventory-link">
             <span class="nav-item">Accessory Sell</span>
-            <i class="fa-solid fa-trash"></i>
+            <i class="fas fa-headphones"></i>
 
         </a>
     </div>

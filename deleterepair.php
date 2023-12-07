@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         <div class="container">
             <div>
                 <h1><b>Delete A Repair</b></h1>
-                <a href="repair.php">
+                <a href="repair.php" class="inventory-link">
                     <i class="fa-solid fa-arrow-left"></i>
                     <span class="nav-item">Back to Repair Page</span>
 

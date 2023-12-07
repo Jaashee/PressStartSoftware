@@ -443,3 +443,39 @@ table th, table td {
     max-width: 400px;
     margin: 0 auto;
 }
+
+.sell-game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 50px;
+}
+
+.sell-game-title {
+    margin-bottom: 20px;
+    font-size: 34px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.sell-console-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.sell-console-title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.online-market-text {
+    margin-top: 20px;
+    text-align: center;
+}

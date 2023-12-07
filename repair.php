@@ -186,13 +186,13 @@ $message = "";
     </table>
 </div>
         <div>
-                <a href="deleterepair.php">
+                <a href="deleterepair.php" class="inventory-link">
                         <span class="nav-item">Delete Repair</span>
                         <i class="fa-solid fa-arrow-right"></i>
                        
                     </a>
                     <br>
-                     <a href="repairsearch.php">
+                     <a href="repairsearch.php" class="inventory-link">
                         <span class="nav-item">Search for repairs</span>
                         <i class="fa-solid fa-magnifying-glass"></i>
                        
