@@ -14,7 +14,7 @@ if(! isset($_SESSION['employee_id']))
 
 $qty = 1;
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
-	$gameid = 0;
+	$accessoryid = 0;
 	$price = 0;
     $type  =0;
     $title = 0;
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
 }
 else if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	$gameid = trim($_POST['gameid']);
+	$accessoryid = trim($_POST['accessoryid']);
 	$price = trim($_POST['price']);
     $type = trim($_POST['type']);
     $title = trim($_POST['title']);
@@ -36,18 +36,19 @@ else if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sell = false;
 	
 
-    if (!is_numeric($gameid)) {
-        $message = "Repair ID must be a number";
+    if (!is_numeric($accessoryid)) {
+        $message = "Accessory ID must be a number";
         $prodid = "";
         $valid = false;
 
     } else {
-        $query = pg_query($conn, "SELECT * FROM  games WHERE game_id= '$gameid'");
+        $query = pg_query($conn, "SELECT * FROM  accessories WHERE accessories_id= '$accessoryid'");
         if (!pg_num_rows($query) > 0) {
-            $message = "Game ID does not exist";
+            $message = "Accessory ID does not exist";
             $valid = false;
         }
     }
+
     if (!is_numeric($prodid)) {
         $message = "Product ID must be a number";
         $prodid = "";
@@ -85,8 +86,8 @@ else if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $valid = false;
         
     }
-    if(!is_numeric($gameid)){
-        $message = "Game ID must be numeric";
+    if(!is_numeric($accessoryid)){
+        $message = "Accessory ID must be numeric";
         $valid = false;
         
     }
@@ -101,36 +102,31 @@ else if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if($type == 'Sell'){
 		$sell = true;
 	}
-  
 
-    $math = 0;
-    if (is_numeric($price))
-    {
-        $math = $price * 0.80;
-    }
+   
     
 
 
    
     $date = date("Y-m-d");
 
-        $returngamesql = "UPDATE games";
+        $returngamesql = "UPDATE accessories";
         $returngamesql .= " SET in_stock = ('Yes')";
-        $returngamesql .= " WHERE game_id = $gameid";
+        $returngamesql .= " WHERE accessories_id = $accessoryid";
         $returntransaction = "INSERT INTO transactions (date,transaction_type,price)";
         $returntransaction .= "VALUES ('$date','-','$price')"; 
         $returnproduct = "INSERT INTO product (product_id,name_of_product,product_type,price)";
-        $returnproduct .= "VALUES ('$prodid','$title','game','$price')";
+        $returnproduct .= "VALUES ('$prodid','$title','accessory','$price')";
         $returninvoice = "INSERT INTO invoice_item (product_id,order_date,item_qty)";
         $returninvoice .= "VALUES ('$prodid','$date','$qty')";
 
-        $sellgamesql = "UPDATE games";
+        $sellgamesql = "UPDATE accessories";
         $sellgamesql .= " Set in_stock = 'No'";
-        $sellgamesql .= " WHERE game_id = $gameid";
+        $sellgamesql .= " WHERE accessories_id = $accessoryid";
         $selltransaction = "INSERT INTO transactions (date,transaction_type,price)";
-        $selltransaction .= "VALUES ('$date','+','$math')"; 
+        $selltransaction .= "VALUES ('$date','+','$price')"; 
         $sellproduct = "INSERT INTO product (product_id,name_of_product,product_type,price)";
-        $sellproduct .= "VALUES ('$prodid','$title','game','$math')";
+        $sellproduct .= "VALUES ('$prodid','$title','accessory','$price')";
         $sellinvoice = "INSERT INTO invoice_item (product_id,order_date,item_qty)";
         $sellinvoice .= "VALUES ('$prodid','$date','$qty')";
 
@@ -144,7 +140,7 @@ else if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if (pg_query($conn, $returntransaction)) {
                     if (pg_query($conn, $returnproduct)) {
                         if (pg_query($conn, $returninvoice)) {
-                            $message = "The game was successfully returned!";
+                            $message = "The accessory was successfully returned!";
                         }
                     }
                 }
@@ -160,7 +156,7 @@ else if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if (pg_query($conn, $selltransaction)) {
                     if (pg_query($conn, $sellproduct)) {
                         if (pg_query($conn, $sellinvoice)) {
-                            $message = "The game was successfully sold!";
+                            $message = "The acessory was successfully sold!";
                         }
                     }
                 }
@@ -181,12 +177,12 @@ else if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
  <form  method="post" enctype="multipart/form-data" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
  <div class="form-group">
-	 <label for="gameid">Game ID:</label>
-	 <input class="form-control" name="gameid"  placeholder="Enter Game ID" type="number">
+	 <label for="accessoryid">Acessory ID:</label>
+	 <input class="form-control" name="accessoryid"  placeholder="Enter Accessory ID" type="number">
  </div>
  <div class="form-group">
-	 <label for="title">Title:</label>
-	 <input class="form-control" name="title"  placeholder="Enter Title of game" type="text">
+	 <label for="title">Name of console:</label>
+	 <input class="form-control" name="title"  placeholder="Enter Name of acessory" type="text">
  </div>
  <div class="form-group">
 	 <label for="dob">Price:</label>
@@ -207,9 +203,7 @@ else if ($_SERVER["REQUEST_METHOD"] == "POST") {
  <button class="btn btn-primary" type="submit">Process</button>
 </form>
 
-<a href="https://www.pricecharting.com/" target="_blank">
-  <button class="btn btn-primary" type="button">Online Market</button>
-</a>
+
    
     </div>
 </div>
