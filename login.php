@@ -35,12 +35,12 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if (pg_num_rows($result) == 1) {
 
 
-        $row = pg_fetch_assoc($result);
-        $hashed = $row['password'];
+    $row = pg_fetch_assoc($result);
+       // $hashed = $row['password'];
 
-        if (password_verify($password, $hashed)) {
+        //if (password_verify($password, $hashed)) {
 
-            if ($row['employee_id'] === $employee_id && $row['password'] === $hashed) {
+            if ($row['employee_id'] === $employee_id){ //&& $row['password'] === $hashed) {
                 $_SESSION['employee_id'] = $row['employee_id'];
                 $_SESSION['employee_name'] = $row['first_name'];
                 $_SESSION['typeemployee'] = $row['type'];
@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             }
 
 
-        }
+        
 
 
     } else {
@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             <?php
 
             ?>
-            <form class="buy-form">
+            
                 <form class="form-signin" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                     <h1 class="h3 mb-3 font-weight-normal">Employee Login</h1>
                     <label for="inputEmail" class="sr-only">Email address</label>
@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                            class="form-control" placeholder="Enter password" required>
                     <button class="btn btn-lg btn-primary btn-block" name="login" type="submit">Sign in</button>
                 </form>
-            </form>
+    
         </div>
     </div>
 

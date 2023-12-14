@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     // Validate the form data
     $valid = true;
 
-    if ($_SESSION['typeemployee'] == 'M') {
+    
 
 
         if (!isset($first_name) || trim($first_name) == "") {
@@ -113,10 +113,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         }
 
 
-    } else {
-        $valid = false;
-        $message = "Only manager can register employees";
-    }
+   
 
 
     if (isset($password)) {
@@ -144,7 +141,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         <div class="main-content">
             <div class="container">
                 <div>
-                    <h1>Employee Page || Currently logged in: <?php echo $_SESSION['employee_name']; ?></h1>
+           
                     <br>
                     <h3>Employee Settings</h3>
                     <div>
