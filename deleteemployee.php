@@ -81,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                     <button class="btn btn-primary" type="submit">Delete</button>
                 </form>
             </div>
-            <a href="index.php">
+            <a href="index.php" class="inventory-link">
                 <i class="fa-solid fa-arrow-left"></i>
                 <span class="nav-item">Back to Employee Page</span>
             </a>

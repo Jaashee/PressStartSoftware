@@ -6,23 +6,21 @@ if (!isset($_SESSION['employee_id'])) {
 
 ?>
 <div class="main-content">
-    <div class="container">
+    <div class="inventory-container">
+        <h1><strong>Products Search</h1>
         <a href="sellgame.php" class="inventory-link">
             <span class="nav-item">Game Sell</span>
             <i class="fas fa-gamepad"></i>
-
         </a>
         <br>
         <a href="sellconsole.php" class="inventory-link">
             <span class="nav-item">Console Sell</span>
             <i class="fas fa-tv"></i>
-
         </a>
         <br>
         <a href="sellaccessory.php" class="inventory-link">
             <span class="nav-item">Accessory Sell</span>
             <i class="fas fa-headphones"></i>
-
         </a>
     </div>
 </div>

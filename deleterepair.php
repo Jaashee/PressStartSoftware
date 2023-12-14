@@ -62,41 +62,28 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 }
 ?>
     <div class="main-content">
-        <div class="container">
+        <div class="form-container">
             <div>
                 <h1><b>Delete A Repair</b></h1>
-                <a href="repair.php" class="inventory-link">
-                    <i class="fa-solid fa-arrow-left"></i>
-                    <span class="nav-item">Back to Repair Page</span>
-
-
-                </a>
             </div>
-
             <h2 id="errors"> <?php echo $message; ?></h2>
-
             <div>
-
                 <form method="post" enctype="multipart/form-data" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-
-
                     <div class="form-group">
                         <label for="employee_id">Employe ID:</label>
                         <input class="form-control" name="repair_id" placeholder="Enter Repair ID" type="number">
-
                     </div>
-
                     <div class="form-group">
                         <label for="confirm">Type 'CONFIRM' to delete repair:</label>
                         <input class="form-control" name="confirm" placeholder="CONFIRM" type="text">
-
                     </div>
-
-
                     <button class="btn btn-primary" type="submit">Delete</button>
                 </form>
-
             </div>
+            <a href="repair.php" class="inventory-link">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span class="nav-item">Back to Repair Page</span>
+            </a>
         </div>
     </div>
 
