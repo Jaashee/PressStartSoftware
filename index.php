@@ -214,15 +214,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                         <?php
                         }
                         ?>
-
                     </table>
-
                 </div>
-
-
                 <div>
                     <h2 id="errors"> <?php echo $message; ?></h2>
-
                     <div>
                         <h2 align="center">Register Employee</h2>
                         <form method="post" enctype="multipart/form-data" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
@@ -230,31 +225,26 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                                 <label for="first_name">First name:</label>
                                 <input class="form-control" value="<?php $first_name ?>" name="first_name"
                                        placeholder="Enter first name" type="text">
-
                             </div>
                             <div class="form-group">
                                 <label for="last_name">Last name:</label>
                                 <input class="form-control" value="<?php $last_name ?>" name="last_name"
                                        placeholder="Enter last name" type="text">
-
                             </div>
                             <div class="form-group">
                                 <label for="last_name">Password:</label>
                                 <input class="form-control" value="<?php $password ?>" name="password"
                                        placeholder="Enter a password" type="password">
-
                             </div>
                             <div class="form-group">
                                 <label for="confirmpassword">Confirm Password:</label>
                                 <input class="form-control" value="<?php $confirmpassword ?>" name="confirmpassword"
                                        placeholder="Confirm password" type="password">
-
                             </div>
                             <div class="form-group">
                                 <label for="phonenumber">Phone Number:</label>
                                 <input class="form-control" value="<?php $phonenumber ?>" name="phonenumber"
-                                       placeholder="Enter Phone Number" type="text">
-
+                                       placeholder="XXX-XXX-XXXX" type="text">
                             </div>
 
                             <div class="form-group">
@@ -262,20 +252,17 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                                 <input class="form-control" value="<?php $address ?>" name="address"
                                        placeholder="Enter address"
                                        type="text">
-
                             </div>
                             <div class="form-group">
-                                <label for="manager">Status of employee</label>
-                                <input class="form-control" value="<?php $is_manager ?>" name="manager"
-                                       placeholder="'M' or 'E'"
-                                       type="text">
-
+                                <label  for="manager">Status of employee
+                                    <input class="form-control" value="<?php $is_manager ?>" name="manager"
+                                           placeholder="'M' or 'E'"
+                                           type="text">
+                                </label>
                             </div>
                             <br>
                             <button class="btn btn-primary" type="submit">Add Employee</button>
                         </form>
-
-
                     </div>
                 </div>
             </div>

@@ -41,34 +41,25 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 }
 ?>
     <div class="main-content">
-        <div class="container">
+        <div class="form-container">
             <div>
                 <h1><b>Update last name</b></h1>
-                <a href="index.php">
-                    <i class="fa-solid fa-arrow-left"></i>
-                    <span class="nav-item">Back to Employee Page</span>
-
-
-                </a>
             </div>
-
             <h2 id="errors"> <?php echo $message; ?></h2>
-
             <div>
-
-                <form method="post" enctype="multipart/form-data" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-
-
+                <form class="update-name-form" method="post" enctype="multipart/form-data"
+                      action="<?php echo $_SERVER["PHP_SELF"]; ?>">
                     <div class="form-group">
                         <label for="first_name">Update your First Name:</label>
                         <input class="form-control" name="last_name" placeholder="Enter last name" type="text">
-
                     </div>
-
                     <button class="btn btn-primary" type="submit">Update</button>
                 </form>
-
             </div>
+            <a href="index.php">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span class="nav-item">Back to Employee Page</span>
+            </a>
         </div>
     </div>
 

@@ -62,42 +62,30 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 }
 ?>
     <div class="main-content">
-    <div class="container">
-    <div>
-        <h1><b>Delete Employee Account</b></h1>
-        <a href="index.php">
-            <i class="fa-solid fa-arrow-left"></i>
-            <span class="nav-item">Back to Employee Page</span>
-
-
-        </a>
-    </div>
-
-    <h2 id="errors"> <?php echo $message; ?></h2>
-
-    <div>
-
-        <form method="post" enctype="multipart/form-data" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-
-
-            <div class="form-group">
-                <label for="employee_id">Employe ID:</label>
-                <input class="form-control" name="employee_id" placeholder="Enter employee ID" type="number">
-
+        <div class="form-container">
+            <div>
+                <h1><b>Delete Employee Account</b></h1>
             </div>
-
-            <div class="form-group">
-                <label for="confirm">Type 'CONFIRM' to delete account:</label>
-                <input class="form-control" name="confirm" placeholder="CONFIRM" type="text">
-
+            <h2 id="errors"> <?php echo $message; ?></h2>
+            <div>
+                <form class="update-name-form" method="post" enctype="multipart/form-data"
+                      action="<?php echo $_SERVER["PHP_SELF"]; ?>">
+                    <div class="form-group">
+                        <label for="employee_id">Employe ID:</label>
+                        <input class="form-control" name="employee_id" placeholder="Enter employee ID" type="number">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm">Type 'CONFIRM' to delete account:</label>
+                        <input class="form-control" name="confirm" placeholder="CONFIRM" type="text">
+                    </div>
+                    <button class="btn btn-primary" type="submit">Delete</button>
+                </form>
             </div>
-
-
-            <button class="btn btn-primary" type="submit">Delete</button>
-        </form>
-
-    </div>
-    </div>
+            <a href="index.php">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span class="nav-item">Back to Employee Page</span>
+            </a>
+        </div>
     </div>
 
 <?php include './includes/footer.php';

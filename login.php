@@ -67,10 +67,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             <h2 id="errors"> <?php echo $message; ?></h2>
             <form class="form-signin" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                 <h1 class="h3 mb-3 font-weight-normal">Employee Login</h1>
-                <label for="employee_id"></label>
+                <label for="employee_id" class="sr-only"></label>
                 <input type="number" id="employee_id" class="form-control" name="employee_id"
                        value="<?php echo $employee_id; ?>" placeholder="Enter Employee ID" required autofocus>
-                <label for="password"></label><input type="password" id="password" name="password"
+                <label for="password" class="sr-only"></label><input type="password" id="password" name="password"
                         value="<?php echo $password; ?>" class="form-control" placeholder="Enter password" required>
                 <button class="btn btn-lg btn-primary btn-block" name="login" type="submit">Sign in</button>
             </form>
