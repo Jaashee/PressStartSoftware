@@ -87,34 +87,32 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 ?>
 <div class="main-content">
     <div class="client-page-container">
-        <h1 class="client-page-title">Client Page</h1>
-        <form class="client-form">
-            <h2 id="errors"> <?php echo $message; ?></h2>
-
-            <form method="post" enctype="multipart/form-data" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-                <div class="form-group">
-                    <label for="fname">Client Email:</label>
-                    <input class="form-control" name="client_email" placeholder="Enter Client Email" type="email">
-                </div>
-                <div class="form-group">
-                    <label for="fname">First Name:</label>
-                    <input class="form-control" name="fname" placeholder="Enter First Name" type="text">
-                </div>
-                <div class="form-group">
-                    <label for="lname">Last Name:</label>
-                    <input class="form-control" name="lname" placeholder="Enter Last Name" type="text">
-                </div>
-                <div class="form-group">
-                    <label for="dob">Date of Birth:</label>
-                    <input class="form-control" name="dobb" placeholder="YYYY-MM-DD" type="text">
-                </div>
-                <div class="form-group">
-                    <label for="adsress">Client Address:</label>
-                    <input class="form-control" name="address" placeholder="Enter Address" type="text">
-                </div>
-                <br>
-                <button class="btn btn-primary" type="submit">Register</button>
-            </form>
+        <h1 class="client-page-title">Client Registration</h1>
+        <h2 id="errors"> <?php echo $message; ?></h2>
+        <form class="client-form" method="post" enctype="multipart/form-data"
+              action="<?php echo $_SERVER["PHP_SELF"]; ?>">
+            <div class="form-group">
+                <label for="fname">Client Email:</label>
+                <input class="form-control" name="client_email" placeholder="Enter Client Email" type="email">
+            </div>
+            <div class="form-group">
+                <label for="fname">First Name:</label>
+                <input class="form-control" name="fname" placeholder="Enter First Name" type="text">
+            </div>
+            <div class="form-group">
+                <label for="lname">Last Name:</label>
+                <input class="form-control" name="lname" placeholder="Enter Last Name" type="text">
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input class="form-control" name="dobb" placeholder="YYYY-MM-DD" type="text">
+            </div>
+            <div class="form-group">
+                <label for="adsress">Client Address:</label>
+                <input class="form-control" name="address" placeholder="Enter Address" type="text">
+            </div>
+            <br>
+            <button class="btn btn-primary" type="submit">Register</button>
         </form>
     </div>
 </div>
