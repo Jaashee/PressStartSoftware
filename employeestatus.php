@@ -5,7 +5,7 @@ if ($_SESSION['typeemployee'] != 'M') {
 }
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $employee_id = 0;
-    $statas = "";
+    $status = "";
     $message = "";
 
 } else if ($_SERVER["REQUEST_METHOD"] == "POST") {
