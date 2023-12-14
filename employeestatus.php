@@ -3,6 +3,7 @@
 if ($_SESSION['typeemployee'] != 'M') {
     redirect("index.php");
 }
+$message = "";
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $employee_id = 0;
     $status = "";
@@ -49,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         }
     }
 
-    if (!($message == 'M' || $message == 'E')) {
+    if (!($status == 'M' || $status == 'E')) {
         $message = "Status of employee can only be 'M' or 'E'";
         $valid = false;
     }
